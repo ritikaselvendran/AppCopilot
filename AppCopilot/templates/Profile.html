@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me - AppCopilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      margin: 10px 0 5px;
+    }
+
+    p {
+      margin: 0;
+      color: #555;
+    }
+
+    .social-links {
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-photo">
+    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Photo">
+  </div>
+
+  <h2>Ritika S</h2>
+  <p>Roll No: 71762232043</p>
+
+  <div class="social-links">
+    <a href="https://github.com/ritikaselvendran/" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/ritika-selvendran-3a86b4298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+  </div>
+
+</body>
+</html>

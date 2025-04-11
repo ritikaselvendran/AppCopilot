@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - AppCopilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .left-panel, .right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .left-panel {
+      background-color: #fff;
+      border-radius: 20px;
+      max-width: 480px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 9999px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    .actions label {
+      font-size: 0.9rem;
+    }
+
+    .actions a {
+      font-size: 0.9rem;
+      color: #f78c1f;
+      text-decoration: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #333;
+    }
+
+    .footer {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: #f78c1f;
+      text-decoration: none;
+    }
+
+    .right-panel {
+      background: linear-gradient(to right, #c3e0f0, #ffe0cc);
+      text-align: center;
+    }
+
+    .right-panel h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .right-panel p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 400px;
+    }
+
+    .house-image {
+      margin-top: 2rem;
+      max-width: 100%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="App Copilot logo">
+
+        <h1>APPCOPILOT</h1>
+      </div>
+      <form>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" required>
+        </div>
+        
+        <div class="actions">
+          <label><input type="checkbox"> Remember me</label>
+          <p style="text-align: right; margin-top: 10px;">
+            <a href="{{ url_for('reset_password') }}" style="text-decoration: none; color: #007bff;">Reset Password?</a>
+          </p>
+        </div>
+        <button type="submit" class="btn">Log in</button>
+      </form>
+      <div class="footer">
+        Don't have an account yet?<a href="{{ url_for('register') }}"> New Account</a>
+        <div class="profile-photo">
+          <img src="{{ url_for('static', filename='images/Profile.png') }}" alt="Profile Photo">
+        </div>
+      
+        <h2>Ritika S</h2>
+        <p>Roll No: 71762232043</p>
+      
+        <div class="social-links">
+          <a href="https://github.com/ritikaselvendran/" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/ritika-selvendran-3a86b4298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="right-panel">
+      <h2>WELCOME TO APPCOPILOT</h2>
+      <h1>Compare Your Property</h1>
+      <p>Discover homes that match your lifestyle.</p>
+      <img src="{{ url_for('static', filename='images/house.png') }}" alt="House Image">
+    </div>
+  </div>
+</body>
+</html>

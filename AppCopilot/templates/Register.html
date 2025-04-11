@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppCopilot - Compare Your Property</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .left-panel {
+      flex: 1;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .logo {
+      margin-bottom: 1.5rem;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .form {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .checkbox input {
+      margin-right: 8px;
+    }
+
+    .form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-link {
+      margin-top: 1rem;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .login-link a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .right-panel {
+      flex: 1;
+      background: linear-gradient(to right, #c1e1ec, #f9c7a8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .right-panel h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .right-panel p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .right-panel img {
+      width: 80%;
+      max-width: 500px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Image">
+
+      </div>
+      <form class="form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Jiangyu" />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="example@gmail.com" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+
+        <div class="checkbox">
+          <input type="checkbox" id="terms" />
+          <label for="terms">By creating an account you agree to the <a href="#">terms of use</a> and our <a href="#">privacy policy</a>.</label>
+        </div>
+
+        <button type="submit">Create Account</button>
+        <div class="login-link">
+          Already have an account? <a href="{{ url_for('login') }}"> Log in</a>
+          
+        </div>
+      </form>
+    </div>
+    <div class="right-panel">
+      <h2>WELCOME TO APPCOPILOT</h2>  
+      <h1>Compare Your Property</h1>
+      <p>Discover homes that match your lifestyle.</p>
+      <img src="{{ url_for('static', filename='images/house.png') }}" alt="House Image">
+    </div>
+  </div>
+</body>
+</html>
